@@ -46,6 +46,8 @@ p{
     margin-top: 0;
     border-bottom-left-radius: 20px;
     border-bottom-right-radius: 20px;
+    width: auto;
+    height: 50000px;
 }
 
 .hidden_card{
@@ -266,4 +268,5 @@ span{
     text-shadow: 1px 1px black;
 
 }
+
 
