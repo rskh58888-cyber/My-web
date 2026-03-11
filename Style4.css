@@ -1,0 +1,264 @@
+body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 0;
+}
+
+.introduction{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    color:bisque;
+    font-size: 28px;
+    font-weight: 700;
+    background-color: brown;
+    padding: 25px;
+    margin-bottom: 0;
+    height: auto;
+    width: auto;
+}
+
+h1{
+    font-size: 54px;
+    height: auto;
+    width: auto;
+}
+p{
+    height: auto;
+    width: auto;
+    text-wrap: wrap;
+}
+
+.container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    background-color: bisque;
+    padding: 50px;
+    border: 5px solid brown;
+    margin-top: 0;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+
+.hidden_card{
+    opacity: 0;
+    transform: translateY(80px);
+    transition: all 0.8s ease;
+}
+
+.card{
+    display: flex;
+    justify-content: center;
+    opacity: 1;
+    transform: translateY(0);
+    flex-direction: column;
+    padding: 0px;
+    margin: 60px;
+    border:none;
+    position: relative;
+    bottom: 10px;
+    transform: translateY(0);
+    border: 1px solid black;
+    border-radius: 15px;
+}
+.card2{
+    display: flex;
+    justify-content: center;
+    opacity: 1;
+    transform: translateY(0);
+    flex-direction: column;
+    padding: 0px;
+    margin: 60px;
+    border:none;
+    position: relative;
+    bottom: 10px;
+    transform: translateY(0);
+    border: 1px solid black;
+    border-radius: 15px;
+}
+
+.card:hover{
+    border: 4px solid brown;
+    border-radius: 15px;
+    transform: scale(1.04) rotate(6deg);
+    transition: all 0.5s ease;
+}
+.card2:hover{
+    border: 4px solid brown;
+    border-radius: 15px;
+    transform: scale(1.04) rotate(-6deg);
+}
+
+.card_image{
+    border: none;
+    border-radius: 15px;
+    position: relative;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    top: 0px;
+    height: 200px;
+    width: 200px;
+}
+
+.card_discribtion{
+    border: none;
+    color: brown;
+    font-size: 16px;
+}
+
+.card_buttonsCase{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-image: url(male1.jpeg);
+    background-repeat: repeat;
+    background-size: cover;
+    background-position-y: 65px;
+    background-position-x: center;
+    border: 1px solid brown;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius:15px ;
+}
+
+.add_button{
+    width: 90px;
+    height: 20px;
+    background-image: url(Add_to_cart.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin-bottom: 23px;
+    margin-top: 2px;
+    transition: all 0.5s ease;
+    border-radius: 15px;
+}
+
+.added_button{
+    width: 90px;
+    height: 20px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-image: url(Added_to_cart.jpg);
+    margin-bottom: 23px;
+    margin-top: 2px;
+    transition: all 0.5s ease;
+    border-radius: 15px;
+}
+
+.show_button{
+    width: 90px;
+    height: 20px;
+    background-image: url(New.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    transition: all 0.5s ease;
+    position: absolute;
+    bottom: 2px;
+    border-radius: 15px;
+}
+
+.cart{
+    position:sticky;
+    bottom: 0;
+    border: 5px solid brown;
+    border-radius: 20px;
+    width: 1250px;
+    height: 80px;
+    background-color: bisque;
+}
+
+.cart_image{
+    position:absolute;
+    left: 30px;
+    bottom: 20px;
+    border: none;
+    background-image: url(cart.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    border-radius: 60px;
+    width: 40px;
+    height: 40px;
+}
+
+.text{
+    position: absolute;
+    z-index: 1;
+    left:85px;
+    bottom: 25px;
+    border:none;
+    border-radius:10px;
+    height:30px;
+    width:70px;
+    text-align: center;
+}
+
+.text_cover{
+    position: absolute;
+    z-index: 2;
+    height:35px;
+    width:75px;
+    left:85px;
+    bottom: 25px;
+    background: none;
+}
+
+.price{
+    display: none;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    opacity: 0.2;
+    background-color: black;
+    width: 1280px;
+    height: 1650px;
+    z-index: 3;
+    transition: all 0.3s ease;
+    top:0;
+    bottom: 0;
+    margin-bottom: 0;
+}
+
+.price_card{
+    display: none;
+    flex-direction: column;
+    position: sticky;
+    left: 580px;
+    bottom:350px;
+    opacity: 1;
+    border: 6px solid brown;
+    background-color: bisque;
+    border-radius: 20px;
+    height: 120px;
+    width: 90px;
+    align-items: center;
+    text-align: center;
+    color: brown;
+    padding: 10px;
+    z-index: 4;
+}
+
+.price_card_button{
+    border: none;
+    border-radius:25px ;
+    width: auto;
+    padding: 2px;
+    height: 15px;
+    background-color: brown;
+    color: bisque;
+}
+
+span{
+    font-weight: 600;
+    font-size: large;
+    text-shadow: 1px 1px black;
+}

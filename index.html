@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Shopping Web
+        </title>
+        <link rel="stylesheet" href="Style4.css">
+        <link rel="icon" type="image/jpeg" href="male1.jpeg">
+    </head>
+    <body>
+        <div class="introduction">
+            <h1>Welcome to our food showcase platform</h1>
+            <p>This project is designed to present different food products in a clean and interactive card-based layout.
+
+Each card represents a specific item and provides essential information such as the product name, description, and price. The interface allows users to interact with the elements easily by revealing prices or adding items to a shopping cart.
+
+The main objective of this project is to demonstrate practical usage of modern web development concepts including structured HTML layouts, flexible CSS styling, and interactive JavaScript behavior.
+
+Through this project, users can experience a simple yet dynamic interface that simulates a basic online food menu or shopping system.</p>
+        </div>
+        <div class="container">
+            <div class="hidden_card" data-price="50 EGP" id="card1">
+                <div class="card_image" style="background-image: url('curry.png');"></div>
+                <div class="card_discribtion">Curry</div>
+                <div class="card_buttonsCase">
+                    <div class="add_button" onclick="cart('add1')" id="add1"></div>
+                    <div class="show_button" onclick="price('show1','card1')" id="show1"></div>
+                </div>
+            </div>
+
+            <div class="hidden_card" data-price="50 EGP" id="card2">
+                <div class="card_image" style="background-image: url(curry.png);"></div>
+                <div class="card_discribtion">Curry</div>
+                <div class="card_buttonsCase">
+                    <div class="add_button" onclick="cart('add2')" id="add2"></div>
+                    <div class="show_button" onclick="price('show2','card2')" id="show2"></div>
+                </div>
+            </div>
+            <div class="hidden_card" data-price="50 EGP" id="card3">
+                <div class="card_image" style="background-image: url(curry.png);"></div>
+                <div class="card_discribtion">Curry</div>
+                <div class="card_buttonsCase">
+                    <div class="add_button" onclick="cart('add3')" id="add3"></div>
+                    <div class="show_button" onclick="price('show3','card3')" id="show3"></div>
+                </div>
+            </div>
+
+            <div class="hidden_card" data-price="50 EGP" id="card4">
+                <div class="card_image" style="background-image: url(curry.png);"></div>
+                <div class="card_discribtion">Curry</div>
+                <div class="card_buttonsCase">
+                    <div class="add_button" onclick="cart('add4')" id="add4"></div>
+                    <div class="show_button" onclick="price('show4','card4')" id="show4"></div>
+                </div>
+            </div>
+
+            <div class="hidden_card" data-price="50 EGP" id="card5" data-type="a single male">
+                <div class="card_image" style="background-image: url(curry.png);"></div>
+                <div class="card_discribtion">Curry</div>
+                <div class="card_buttonsCase">
+                    <div class="add_button" onclick="cart('add5')" id="add5"></div>
+                    <div class="show_button" onclick="price('show5','card5')" id="show5"></div>
+                </div>
+            </div>
+        </div>
+        <div class="cart">
+            <div class="cart_image"></div>
+            <input class="text" id="SPrice" type="text" value="0">
+            <div class="text_cover"></div>
+        </div>
+        <div class="price" id="price_border" onclick="hide()">
+        </div>
+        <div class="price_card" id = "price_card">
+                The price is :<span id = "card_price"></span><br>
+                <button class="price_card_button" onclick="hide()">Confirm</button>
+            </div>
+
+        <script>
+            let elements = document.querySelectorAll(".hidden_card");
+            let observer = new IntersectionObserver(function(entries){
+                entries.forEach(function(entry){
+                    if(entry.isIntersecting){
+                        if(Math.round((Math.random() * 10)) < 5){
+                            entry.target.classList.add("card");
+                        } else {
+                            entry.target.classList.add("card2");
+                        }
+                    } else {
+                        entry.target.classList.remove("card")
+                        entry.target.classList.remove("card2")
+                    }
+                })
+            })
+
+            elements.forEach(function(el){
+                observer.observe(el)
+            })
+            let els_num = 0;
+
+            function cart(el){
+                let ele = document.getElementById(el)
+                if(ele.classList.contains("add_button")){
+                    ele.classList.add("added_button")
+                    ele.classList.remove("add_button")
+                    els_num = els_num + 1;
+                } else {
+                    ele.classList.add("add_button")
+                    ele.classList.remove("added_button")
+                    els_num = els_num - 1;
+                }
+                document.getElementById("SPrice").value = els_num;
+            }
+
+            function price(el1,el2){
+                let ele1 = document.getElementById(el1)
+                let ele2 = document.getElementById(el2)
+                let price = document.getElementById("price_border")
+                let price_card = document.getElementById("price_card")
+                if(ele1.classList.contains("show_button")){
+                    price.style.display = "block"
+                    price_card.style.display = "flex"
+                    document.getElementById("card_price").innerText = ele2.dataset.price
+                } 
+                
+            }
+
+            function hide(){
+                let price = document.getElementById("price_border");
+                let price_card = document.getElementById("price_card");
+                price.style.display = "none"
+                price_card.style.display = "none"
+            }
+        </script>
+    </body>
+</html>
